@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="vue_style.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <h1>{{ header }}</h1>
+        <p>{{ persons[0].id }} {{ persons[0].name }} {{ persons[0].surname }} {{ persons[0].donate }}</p>
+        <p>{{ persons[1].id }} {{ persons[1].name }} {{ persons[1].surname }} {{ persons[1].donate }}</p>
+        <p>{{ persons[2].id }} {{ persons[2].name }} {{ persons[2].surname }} {{ persons[2].donate }}</p>
+        <p>Общая сумма пожертвований: {{persons[0].donate + persons[1].donate + persons[2].donate }}</p>
+    </div>
+    <p class="zadan">Задание 2</p>
+    <div id="prod"> 
+        <label for="tov">Товар</label> <input v-model="tov">
+        <label for="pcs">Количество</label> <input v-model="pcs"> 
+        <label for="val">Цена</label> <input v-model="val">
+        <button v-on:click="input()">Добавить</button>
+        <button v-on:click="sort()">Сортировать</button>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Товар</th>
+                    <th>Количество</th>
+                    <th>Цена</th>
+                    <th>Сумма</th>
+                    <th>Удалить</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr v-for="(pos, i) in positions">
+                    <td>{{ pos.tov1 }}</td>
+                    <td>{{ pos.pcs1 }}</td>
+                    <td>{{ pos.val1 }}</td>
+                    <td>{{ pos.pcs1 * pos.val1 }}</td>
+                    <td><button v-on:click="delet(i)" id="delet">Удалить</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <p class="zadan">Задание 3</p>
+    <div id="check">
+        <input v-model="newTask" @keydown.enter="addTask()" type="text" placeholder="Нажмите Enter, чтобы добавить новую задачу"/>
+        <ul>
+            <li v-for="(item, i) in tasks" :key="i" :class="{done: item.done}">
+
+                <input v-on:change="editTask" type="checkbox" v-model="item.done">
+
+                <p v-show="item.edit === false" v-on:dblclick="item.edit = true">{{ item.text }}</p>
+
+                <input v-show="item.edit === true"
+                       v-model="item.text"
+                       v-on:blur="item.edit = false"
+                       @keyup.enter="item.edit = false"
+                       @keyup.escape="item.edit = false; item.text = '-'"
+                >
+                <button id="delet" @click="deleteTask(i)" type="button" >Удалить</button>
+            </li>
+        </ul>
+    </div>
+    <div id="que">
+        <h1>Тест на Vue.js</h1>
+        <p>Выберите один вариант ответа на каждый вопрос:</p>
+        
+        <question v-for="(question, index) in questions" :key="index" :question="question" @answer="handleAnswer"></question>
+        <p>Вы ответили правильно на {{ score }} из {{ questions.length }} вопросов.</p>
+    </div>
+    <script src="vue_script.js"></script>
+</body>
