@@ -1,0 +1,107 @@
+body {
+    font-size: 20px;
+    font-family: arial;
+
+    box-sizing: border-box;
+    padding: 10%;
+    background-color: #8fe9bf;
+    text-align: center;
+}
+body > div {
+    margin: 20px 0;
+    border-radius: 20px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+    padding: 50px;
+    background-color: #b9f1d7;
+    align-items: center;
+}
+#app {
+    text-align: left;
+}
+.zadan {
+    font-size: 30px;
+    font-weight: 700;
+}
+button {
+    background-color: #F8E391;
+    border: 0px;
+    border-radius: 10px;
+    font-size: 16px;
+    padding: 5px 15px;
+    transition: all linear 0.2s;
+
+}
+button:hover {
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.5);
+    background-color: #2D2020;
+    color: azure;
+}
+#delet {
+    background-color: rgb(241, 114, 114);
+    font-weight: bold;
+}
+input {
+    border-radius: 5px;
+    border-width: 1px;
+    padding: 5px 15px;
+    width: 270px;
+}
+.checkbox {
+    width: auto;
+}
+input:hover {
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.5);
+}
+input:active {
+    border: 0px;
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.5);
+}
+table {
+    font-size: 20px;
+    border-radius: 10px;
+    border-spacing: 0;
+    
+    margin: 30px;
+    justify-content: center;
+    align-items: center;
+}
+th {
+    background: #72ebc7;
+    color: rgb(87, 129, 87);
+    text-shadow: 0 1px 1px #2D2020;
+    padding: 10px 20px;
+}
+th, td {
+    border-style: solid;
+    border-width: 1px;
+    border-color: white;
+}
+.done {
+    color: gray;
+    text-decoration: line-through;
+}
+ul {
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column
+    
+}
+li {
+    display: flex;
+    align-items: center;
+
+}
+li input {
+    width: auto;
+}
+#que input {
+    width: auto;
+    border: 2px solid black;
+}
+#que label {
+    border: 1px solid black;
+    margin: 2px;
+}
+    
